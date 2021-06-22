@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  Box,
-  Button,
-  Heading,
-  Text,
-  Flex,
-  Center,
-} from '@chakra-ui/react';
+import { Container, Button, Heading, Text, Center } from '@chakra-ui/react';
 
 const Hero = () => {
   return (
