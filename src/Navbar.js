@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <div onClick={handleModalClick}>
+    <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent
@@ -50,7 +50,11 @@ const Navbar = () => {
         </ModalContent>
       </Modal>
 
-      <Flex bg={color} color='white' style={{ textTransform: 'uppercase' }}>
+      <Flex
+        bg={color}
+        color='white'
+        style={{ textTransform: 'uppercase' }}
+        onClick={handleModalClick}>
         <Box p='5'>Color Selector</Box>
         <Spacer />
         <Flex display={['none', 'none', 'flex', 'flex']}>
@@ -61,7 +65,7 @@ const Navbar = () => {
         <Flex align='center'>
           <IconButton
             aria-label='Open Menu'
-            bg='gray.800'
+            bg={color}
             size='lg'
             mr={2}
             icon={<HamburgerIcon />}
