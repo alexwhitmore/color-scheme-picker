@@ -66,7 +66,10 @@ const Navbar = () => {
 
         <Spacer />
 
-        <Flex display={['none', 'none', 'flex', 'flex']} fontSize='md'>
+        <Flex
+          display={['none', 'none', 'flex', 'flex']}
+          fontSize='md'
+          align='center'>
           <Link p='5' _hover={{ color: 'cyan.400' }}>
             About
           </Link>
