@@ -4,6 +4,8 @@ import {
   Flex,
   Box,
   Spacer,
+  Link,
+  Text,
   IconButton,
   Modal,
   ModalOverlay,
@@ -52,16 +54,30 @@ const Navbar = () => {
 
       <Flex
         bg={color}
-        color='white'
-        style={{ textTransform: 'uppercase' }}
+        color='gray.200'
+        style={{
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
+        }}
         onClick={handleModalClick}>
-        <Box p='5'>Color Selector</Box>
+        <Link p='5' _hover={{ color: 'cyan.400' }}>
+          <Text fontSize='xl'>Color Selector</Text>
+        </Link>
+
         <Spacer />
-        <Flex display={['none', 'none', 'flex', 'flex']}>
-          <Box p='5'>About</Box>
-          <Box p='5'>Portfolio</Box>
-          <Box p='5'>Contact</Box>
+
+        <Flex display={['none', 'none', 'flex', 'flex']} fontSize='md'>
+          <Link p='5' _hover={{ color: 'cyan.400' }}>
+            About
+          </Link>
+          <Link p='5' _hover={{ color: 'cyan.400' }}>
+            Portfolio
+          </Link>
+          <Link p='5' _hover={{ color: 'cyan.400' }}>
+            Contact
+          </Link>
         </Flex>
+
         <Flex align='center'>
           <IconButton
             aria-label='Open Menu'
@@ -69,12 +85,13 @@ const Navbar = () => {
             size='lg'
             mr={2}
             icon={<HamburgerIcon />}
-            _hover={{ color: 'gray.400' }}
+            _hover={{ color: 'teal ' }}
             display={['flex', 'flex', 'none', 'none']}
             onClick={() => setDisplay('flex')}
           />
         </Flex>
       </Flex>
+
       <Flex
         w='100vw'
         zIndex={20}
