@@ -94,7 +94,7 @@ const Navbar = () => {
         </Flex>
       </Flex>
 
-      {/* <Flex
+      <Flex
         w='100vw'
         zIndex={20}
         bg='gray.200'
@@ -113,7 +113,7 @@ const Navbar = () => {
           <Box p='5'>Portfolio</Box>
           <Box p='5'>Contact</Box>
         </Flex>
-      </Flex> */}
+      </Flex>
     </div>
   );
 };
