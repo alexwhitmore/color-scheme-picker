@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Center,
   Flex,
@@ -21,14 +21,14 @@ const Navbar = () => {
   const [display, setDisplay] = useState('none');
   const [color, setColor] = useState('#1A202C');
   const [showColorPicker, setShowColorPicker] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
 
   const handleModalClick = () => {
-    onOpen();
-
     if (!showColorPicker) {
+      onOpen();
       setShowColorPicker((showColorPicker) => !showColorPicker);
     }
+    setShowColorPicker(false);
   };
 
   return (
@@ -41,7 +41,7 @@ const Navbar = () => {
           <ModalCloseButton color='gray.200' />
           <ModalBody style={{ borderRadius: '10px' }}>
             <Center>
-              {showColorPicker && (
+              {isOpen && (
                 <ChromePicker
                   color={color}
                   onChange={(updatedColor) => setColor(updatedColor.hex)}
@@ -58,13 +58,12 @@ const Navbar = () => {
         style={{
           textTransform: 'uppercase',
           fontWeight: 'bold',
-        }}
-        onClick={handleModalClick}>
+        }}>
         <Link p='5' _hover={{ color: 'cyan.400' }}>
           <Text fontSize='xl'>Color Selector</Text>
         </Link>
 
-        <Spacer />
+        <Spacer onClick={handleModalClick} />
 
         <Flex
           display={['none', 'none', 'flex', 'flex']}
@@ -95,7 +94,7 @@ const Navbar = () => {
         </Flex>
       </Flex>
 
-      <Flex
+      {/* <Flex
         w='100vw'
         zIndex={20}
         bg='gray.200'
@@ -114,7 +113,7 @@ const Navbar = () => {
           <Box p='5'>Portfolio</Box>
           <Box p='5'>Contact</Box>
         </Flex>
-      </Flex>
+      </Flex> */}
     </div>
   );
 };
