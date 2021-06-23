@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   Center,
   Flex,
@@ -21,7 +21,7 @@ const Navbar = () => {
   const [display, setDisplay] = useState('none');
   const [color, setColor] = useState('#1A202C');
   const [showColorPicker, setShowColorPicker] = useState(false);
-  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleModalClick = () => {
     if (!showColorPicker) {
